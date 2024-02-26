@@ -10,7 +10,7 @@
 
     <Grid Background="{StaticResource PrimaryColor}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
@@ -18,12 +18,13 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="tbSearch" Padding="5 0 0 0" FontSize="18" Margin="10" Grid.Column="0" Text="Введите для поиска" VerticalContentAlignment="Center"/>
-            <ComboBox x:Name="cbSort" FontSize="18" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" Text="Сортировка">
-            </ComboBox>
-            <ComboBox x:Name="cbFilter" FontSize="18" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" Text="Фильтрация">
-            </ComboBox>
+            <TextBox x:Name="tbSearch" Padding="5 0 0 0" FontSize="18" Margin="10" Grid.Column="0" VerticalContentAlignment="Center" TextChanged="tbSearch_TextChanged"/>
+            <ComboBox x:Name="cbSortOrders" Grid.Column="1" Margin="10" FontSize="20" SelectionChanged="cbSortOrders_SelectionChanged"/>
+            <ComboBox x:Name="cbSort" Background="Transparent" BorderBrush="Transparent" FontSize="18" Grid.Column="2" Margin="10" SelectionChanged="cbSort_SelectionChanged" VerticalContentAlignment="Center" Text="Сортировка"/>
+            <ComboBox x:Name="cbFilter" FontSize="20" Grid.Column="3" Margin="10" VerticalContentAlignment="Center" Text="Фильтрация" DisplayMemberPath="Name" SelectionChanged="cbFilter_SelectionChanged"/>
+
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -47,12 +48,12 @@
                             <Image Grid.Column="0" Height="100" Source="{Binding ProductImage}"/>
                             <StackPanel Grid.Column="1">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding ProductType.Name}" FontSize="18"/>
-                                    <TextBlock Text=" | " FontSize="18"/>
-                                    <TextBlock Text="{Binding Name}" FontSize="18"/>
+                                    <TextBlock Text="{Binding ProductType.Name}" FontSize="20"/>
+                                    <TextBlock Text=" | " FontSize="20"/>
+                                    <TextBlock Text="{Binding Name}" FontSize="20"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
-                                    <TextBlock Text="Материалы: " FontSize="18"/>
+                                    <TextBlock Text="Материалы: " FontSize="20"/>
                                     <ListView ItemsSource="{Binding ProductMaterial}">
                                         <ListView.ItemsPanel>
                                             <ItemsPanelTemplate>
@@ -61,20 +62,20 @@
                                         </ListView.ItemsPanel>
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding Material.Name}" FontSize="18"/>
+                                                <TextBlock Text="{Binding Material.Name}" FontSize="20"/>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>
                                 </StackPanel>
                             </StackPanel>
-                            <TextBlock Grid.Column="2" Text="{Binding Sum}" FontSize="18"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Sum}" FontSize="20"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-                <Button Content="←" Background="Transparent" BorderBrush="Transparent"/>
-                <ListBox d:ItemsSource="{d:SampleData ItemCount=5}">
+                <Button Content="←" Background="Transparent" BorderBrush="Transparent" FontSize="20"/>
+                <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Name="lbPages">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>
@@ -82,11 +83,11 @@
                     </ListBox.ItemsPanel>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding}"/>
+                            <TextBlock Text="{Binding}" FontSize="20"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button Content="→" Background="Transparent" BorderBrush="Transparent"/>
+                <Button Content="→" Background="Transparent" BorderBrush="Transparent" FontSize="18"/>
             </StackPanel>
         </Grid>
     </Grid>
