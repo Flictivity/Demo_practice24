@@ -21,13 +21,13 @@ namespace Lopushok.Data
         }
     
         public int Id { get; set; }
-        public string MaterialName { get; set; }
+        public string Name { get; set; }
         public int MaterialTypeId { get; set; }
         public int CountInPack { get; set; }
         public int UnitOfMeasureId { get; set; }
         public int CountInStock { get; set; }
         public int MinimalCountLeft { get; set; }
-        public decimal CostInRubles { get; set; }
+        public decimal Cost { get; set; }
     
         public virtual MaterialType MaterialType { get; set; }
         public virtual UnitOfMeasure UnitOfMeasure { get; set; }

@@ -23,6 +23,7 @@ namespace Lopushok
         public MainWindow()
         {
             InitializeComponent();
+            lvProducts.ItemsSource = App.Connection.Product.ToList();
         }
     }
 }

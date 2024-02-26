@@ -17,10 +17,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="tbSearch" Margin="10" Grid.Column="0" Text="Введите для поиска" VerticalContentAlignment="Center"/>
-            <ComboBox x:Name="cbSort" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" Text="Сортировка">
+            <TextBox x:Name="tbSearch" Padding="5 0 0 0" FontSize="18" Margin="10" Grid.Column="0" Text="Введите для поиска" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="cbSort" FontSize="18" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" Text="Сортировка">
             </ComboBox>
-            <ComboBox x:Name="cbFilter" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" Text="Фильтрация">
+            <ComboBox x:Name="cbFilter" FontSize="18" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" Text="Фильтрация">
             </ComboBox>
         </Grid>
         <Grid Grid.Row="1">
@@ -45,13 +45,13 @@
                             <Image Grid.Column="0" Height="100" Source="{Binding Image}"/>
                             <StackPanel Grid.Column="1">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding ProductType}"/>
+                                    <TextBlock Text="{Binding ProductType.Name}"/>
                                     <TextBlock Text=" | "/>
-                                    <TextBlock Text="{Binding ProductName}"/>
+                                    <TextBlock Text="{Binding Name}"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
                                     <TextBlock Text="Материалы: "/>
-                                    <ListView ItemsSource="{Binding}">
+                                    <ListView ItemsSource="{Binding ProductMaterial}">
                                         <ListView.ItemsPanel>
                                             <ItemsPanelTemplate>
                                                 <WrapPanel/>
@@ -59,13 +59,13 @@
                                         </ListView.ItemsPanel>
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding}"/>
+                                                <TextBlock Text="{Binding Material.Name}"/>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>
                                 </StackPanel>
                             </StackPanel>
-                            <TextBlock Grid.Column="2" Text="{Binding}" />
+                            <TextBlock Grid.Column="2" Text="{Binding Sum}" />
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

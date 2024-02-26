@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="00fc0b0d478a40d785b0094b927de94b" Name="Diagram1">
+      <Diagram DiagramId="ab97196136fa4f9080a5976aed4dcd2d" Name="Diagram1">
         <EntityTypeShape EntityType="LopushokModel.Material" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="LopushokModel.MaterialType" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LopushokModel.Product" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
