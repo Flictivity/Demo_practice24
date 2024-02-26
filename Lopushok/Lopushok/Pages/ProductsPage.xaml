@@ -75,7 +75,7 @@
             </ListView>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
                 <Button Content="←" Background="Transparent" BorderBrush="Transparent" FontSize="20"/>
-                <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Name="lbPages">
+                <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Name="lbPages" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>
