@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lopushok"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="720" MinWidth="1280">
+        Title="Лопушок" Height="450" Width="800" MinHeight="720" MinWidth="1280">
     <Grid Margin="10">
         <Frame x:Name="MainFrame"/>
     </Grid>
