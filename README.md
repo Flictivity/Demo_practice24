@@ -38,4 +38,4 @@ dontet build
 
 ## Авторы
 
-* **Сайфуллин Булат** - *Initial work* - https://github.com/Flictivity
+* **Сайфуллин Булат 420П** - *Initial work* - https://github.com/Flictivity
